@@ -1,86 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon App de Chat</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon App</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background: #f2f2f2;
-      text-align: center;
+      background-color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
+      overflow: hidden;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 15px 30px;
+    .btn {
+      width: 80%;
+      max-width: 300px;
+      padding: 15px;
+      margin: 10px 0;
       font-size: 18px;
+      color: white;
+      background-color: #007BFF;
       border: none;
       border-radius: 8px;
-      background-color: #007aff;
-      color: white;
       cursor: pointer;
+      transition: background-color 0.2s ease;
     }
 
-    #popup {
-      display: none;
-      padding: 20px;
-      margin-top: 20px;
-      background: #ffffff;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      max-width: 300px;
-    }
-
-    #popup img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 10px;
+    .btn:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <h1>Bienvenue sur mon app 👋</h1>
-  <p>Pour l’installer sur ton écran d’accueil :</p>
-  <button onclick="showInstall()">📲 Installer l’app</button>
 
-  <div id="popup">
-    <p>1. Appuie sur <strong>Partager</strong> (en bas de Safari)<br>
-    2. Puis clique sur <strong>“Ajouter à l’écran d’accueil”</strong></p>
-    <img src="https://i.imgur.com/3bt3f1H.png" alt="exemple">
-  </div>
+  <button class="btn" onclick="window.location.href='#'">SKIBIDI TECK</button>
+  <button class="btn" onclick="window.location.href='#'">DELTA IOS</button>
+  <button class="btn" onclick="window.location.href='#'">DELTA EXECUTOR</button>
+  <button class="btn" onclick="window.location.href='#'">SCRIPT</button>
+  <button class="btn" onclick="window.location.href='#'">DISCORD SERV</button>
 
-  <script>
-    function isInStandaloneMode() {
-      return (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone);
-    }
-
-    function showInstall() {
-      document.getElementById('popup').style.display = 'block';
-    }
-
-    window.onload = function () {
-      if (isInStandaloneMode()) {
-        // Remplace ici plus tard avec ton vrai chat
-        document.body.innerHTML = `
-          <h1>💬 Bienvenue dans le Chat</h1>
-          <p>Tu es bien connecté. (Le vrai chat arrive ici bientôt...)</p>
-        `;
-      }
-    };
-  </script>
 </body>
 </html>
