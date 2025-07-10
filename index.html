@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon App</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
       font-family: sans-serif;
-      background-color: white;
+      background: white;
+      margin: 0;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      overflow: hidden;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
     }
 
     .btn {
@@ -35,15 +39,52 @@
     .btn:hover {
       background-color: #0056b3;
     }
+
+    img {
+      max-width: 200px;
+      margin: 20px auto;
+    }
+
+    ol {
+      text-align: left;
+      max-width: 400px;
+    }
   </style>
 </head>
 <body>
 
-  <button class="btn" onclick="window.location.href='#'">SKIBIDI TECK</button>
-  <button class="btn" onclick="window.location.href='#'">DELTA IOS</button>
-  <button class="btn" onclick="window.location.href='#'">DELTA EXECUTOR</button>
-  <button class="btn" onclick="window.location.href='#'">SCRIPT</button>
-  <button class="btn" onclick="window.location.href='#'">DISCORD SERV</button>
+  <!-- Instructions d’installation (vue dans Safari) -->
+  <div id="installScreen">
+    <h2>Installer l’application</h2>
+    <p>Pour ajouter cette application à ton écran d’accueil :</p>
+    <ol>
+      <li>Appuie sur <strong>Partager</strong> en bas de Safari (icône avec une flèche vers le haut).</li>
+      <li>Choisis <strong>“Sur l’écran d’accueil”</strong>.</li>
+      <li>Appuie sur <strong>Ajouter</strong>.</li>
+    </ol>
+    <img src="https://developer.apple.com/design/human-interface-guidelines/images/intro/intro-addtohomescreen_2x.png" alt="Ajouter à l'écran d'accueil">
+    <p>Ensuite, ouvre l’app depuis ton écran d’accueil pour accéder aux outils !</p>
+  </div>
+
+  <!-- Vue principale de l’application (quand lancée depuis l’écran d’accueil) -->
+  <div id="appScreen" class="hidden">
+    <button class="btn">SKIBIDI TECK</button>
+    <button class="btn">DELTA IOS</button>
+    <button class="btn">DELTA EXECUTOR</button>
+    <button class="btn">SCRIPT</button>
+    <button class="btn">DISCORD SERV</button>
+  </div>
+
+  <script>
+    // Si l'utilisateur est en mode standalone (écran d’accueil), afficher l’app
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                      || window.navigator.standalone === true;
+
+    if (isStandalone) {
+      document.getElementById('installScreen').classList.add('hidden');
+      document.getElementById('appScreen').classList.remove('hidden');
+    }
+  </script>
 
 </body>
 </html>
