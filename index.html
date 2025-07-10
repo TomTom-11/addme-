@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon App</title>
+
+  <!-- Icône + Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mon App">
+  <meta name="theme-color" content="#007BFF">
+
   <style>
     body {
       font-family: sans-serif;
@@ -53,12 +61,12 @@
 </head>
 <body>
 
-  <!-- Instructions d’installation (vue dans Safari) -->
+  <!-- Instructions si ouvert dans Safari -->
   <div id="installScreen">
     <h2>Installer l’application</h2>
     <p>Pour ajouter cette application à ton écran d’accueil :</p>
     <ol>
-      <li>Appuie sur <strong>Partager</strong> en bas de Safari (icône avec une flèche vers le haut).</li>
+      <li>Appuie sur <strong>Partager</strong> en bas de Safari (l’icône avec une flèche vers le haut).</li>
       <li>Choisis <strong>“Sur l’écran d’accueil”</strong>.</li>
       <li>Appuie sur <strong>Ajouter</strong>.</li>
     </ol>
@@ -66,7 +74,7 @@
     <p>Ensuite, ouvre l’app depuis ton écran d’accueil pour accéder aux outils !</p>
   </div>
 
-  <!-- Vue principale de l’application (quand lancée depuis l’écran d’accueil) -->
+  <!-- Application (vue une fois installée) -->
   <div id="appScreen" class="hidden">
     <button class="btn">SKIBIDI TECK</button>
     <button class="btn">DELTA IOS</button>
@@ -76,7 +84,6 @@
   </div>
 
   <script>
-    // Si l'utilisateur est en mode standalone (écran d’accueil), afficher l’app
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches
                       || window.navigator.standalone === true;
 
