@@ -1,14 +1,14 @@
 {
-  "name": "Mon App de Chat",
-  "short_name": "ChatApp",
+  "name": "Mon App",
+  "short_name": "App",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#007aff",
+  "theme_color": "#007BFF",
   "icons": [
     {
-      "src": "https://i.imgur.com/AtXxM6n.png",
-      "sizes": "192x192",
+      "src": "icon.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
