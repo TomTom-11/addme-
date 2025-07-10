@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon App</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007aff;
+      color: white;
+      cursor: pointer;
+    }
+
+    #popup {
+      display: none;
+      padding: 20px;
+      margin-top: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      max-width: 300px;
+    }
+
+    #popup img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenue sur mon app 👋</h1>
+  <p>Pour l’installer sur ton écran d’accueil :</p>
+  <button onclick="showInstall()">📲 Installer l’app</button>
+
+  <div id="popup">
+    <p>1. Appuie sur <strong>Partager</strong> (en bas de Safari)<br>
+    2. Puis clique sur <strong>“Ajouter à l’écran d’accueil”</strong></p>
+    <img src="https://i.imgur.com/3bt3f1H.png" alt="exemple">
+  </div>
+
+  <script>
+    function showInstall() {
+      document.getElementById('popup').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
