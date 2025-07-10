@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon App</title>
+  <title>Mon App de Chat</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
   <style>
@@ -64,9 +64,23 @@
   </div>
 
   <script>
+    function isInStandaloneMode() {
+      return (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone);
+    }
+
     function showInstall() {
       document.getElementById('popup').style.display = 'block';
     }
+
+    window.onload = function () {
+      if (isInStandaloneMode()) {
+        // Remplace ici plus tard avec ton vrai chat
+        document.body.innerHTML = `
+          <h1>💬 Bienvenue dans le Chat</h1>
+          <p>Tu es bien connecté. (Le vrai chat arrive ici bientôt...)</p>
+        `;
+      }
+    };
   </script>
 </body>
 </html>
